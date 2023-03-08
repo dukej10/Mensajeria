@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MensajeriaBDModelStoreContainer" CdmEntityContainer="MensajeriaBDEntities">
+    <EntitySetMapping Name="bodega">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.bodega">
+        <MappingFragment StoreEntitySet="bodega">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="latitud" ColumnName="latitud" />
+          <ScalarProperty Name="longitud" ColumnName="longitud" />
+          <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departamento">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.departamento">
+        <MappingFragment StoreEntitySet="departamento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="direccion">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.direccion">
+        <MappingFragment StoreEntitySet="direccion">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoCalle" ColumnName="tipoCalle" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="tipoInmueble" ColumnName="tipoInmueble" />
+          <ScalarProperty Name="barrio" ColumnName="barrio" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="actual" ColumnName="actual" />
+          <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+          <ScalarProperty Name="idPersona" ColumnName="idPersona" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="envio">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.envio">
+        <MappingFragment StoreEntitySet="envio">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fechaEnvio" ColumnName="fechaEnvio" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="idRemitente" ColumnName="idRemitente" />
+          <ScalarProperty Name="idDireccionDestino" ColumnName="idDireccionDestino" />
+          <ScalarProperty Name="idPaquete" ColumnName="idPaquete" />
+          <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+          <ScalarProperty Name="idTipoTransporte" ColumnName="idTipoTransporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadoEnvio">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.estadoEnvio">
+        <MappingFragment StoreEntitySet="estadoEnvio">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="historial">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.historial">
+        <MappingFragment StoreEntitySet="historial">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          <ScalarProperty Name="fechaSalida" ColumnName="fechaSalida" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="idPaquete" ColumnName="idPaquete" />
+          <ScalarProperty Name="idBodega" ColumnName="idBodega" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="municipio">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.municipio">
+        <MappingFragment StoreEntitySet="municipio">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="idDepartamento" ColumnName="idDepartamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oficina">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.oficina">
+        <MappingFragment StoreEntitySet="oficina">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="latitud" ColumnName="latitud" />
+          <ScalarProperty Name="longitud" ColumnName="longitud" />
+          <ScalarProperty Name="idMunicipio" ColumnName="idMunicipio" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paquete">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.paquete">
+        <MappingFragment StoreEntitySet="paquete">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="altura" ColumnName="altura" />
+          <ScalarProperty Name="profundidad" ColumnName="profundidad" />
+          <ScalarProperty Name="ancho" ColumnName="ancho" />
+          <ScalarProperty Name="idOficina" ColumnName="idOficina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoTransporte">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.tipoTransporte">
+        <MappingFragment StoreEntitySet="tipoTransporte">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vehiculo">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.vehiculo">
+        <MappingFragment StoreEntitySet="vehiculo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="idTipoTransporte" ColumnName="idTipoTransporte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="persona">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.persona">
+        <MappingFragment StoreEntitySet="persona">
+          <ScalarProperty Name="idTipoDocumento" ColumnName="idTipoDocumento" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="segundoApellido" ColumnName="segundoApellido" />
+          <ScalarProperty Name="primerApellido" ColumnName="primerApellido" />
+          <ScalarProperty Name="otrosNombres" ColumnName="otrosNombres" />
+          <ScalarProperty Name="primerNombre" ColumnName="primerNombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipoDocumento">
+      <EntityTypeMapping TypeName="MensajeriaBDModel.tipoDocumento">
+        <MappingFragment StoreEntitySet="tipoDocumento">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

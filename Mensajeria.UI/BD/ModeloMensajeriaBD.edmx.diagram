@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff6c07bfa6a64af18482c6346902972c" Name="Diagram1">
+        <EntityTypeShape EntityType="MensajeriaBDModel.bodega" Width="1.5" PointX="3" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.departamento" Width="1.5" PointX="1.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.direccion" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.envio" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.estadoEnvio" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.historial" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.municipio" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.oficina" Width="1.5" PointX="0.75" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.paquete" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.tipoTransporte" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.vehiculo" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__historial__idBod__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.Id_MunicipioBodega_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__municipio__idDep__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__direccion__idMun__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__envio__idDirecci__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__envio__idEstado__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__envio__idPaquete__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__envio__idTipoTra__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__historial__idPaq__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__oficina__idMunic__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__paquete__idOfici__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__vehiculo__idTipo__45F365D3" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.persona" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="MensajeriaBDModel.tipoDocumento" Width="1.5" PointX="0.75" PointY="16" />
+        <AssociationConnector Association="MensajeriaBDModel.Id_PersonaDireccion_FK" />
+        <AssociationConnector Association="MensajeriaBDModel.FK__envio__idRemiten__5441852A" />
+        <AssociationConnector Association="MensajeriaBDModel.fk_tipo_doc_persona_id" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

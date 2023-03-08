@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MensajeriaBDModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bodega">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="codigo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="direccion" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="latitud" Type="nvarchar" MaxLength="20" />
+    <Property Name="longitud" Type="nvarchar" MaxLength="20" />
+    <Property Name="idMunicipio" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="departamento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="direccion">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tipoCalle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="numero" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="tipoInmueble" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="barrio" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="observaciones" Type="nvarchar" MaxLength="200" />
+    <Property Name="actual" Type="bit" Nullable="false" />
+    <Property Name="idMunicipio" Type="bigint" Nullable="false" />
+    <Property Name="idPersona" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="envio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaEnvio" Type="date" Nullable="false" />
+    <Property Name="precio" Type="money" Nullable="false" />
+    <Property Name="idRemitente" Type="bigint" />
+    <Property Name="idDireccionDestino" Type="bigint" />
+    <Property Name="idPaquete" Type="bigint" />
+    <Property Name="idEstado" Type="bigint" />
+    <Property Name="idTipoTransporte" Type="bigint" />
+  </EntityType>
+  <EntityType Name="estadoEnvio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="historial">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fechaIngreso" Type="datetime" Nullable="false" />
+    <Property Name="fechaSalida" Type="datetime" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar(max)" />
+    <Property Name="idPaquete" Type="bigint" />
+    <Property Name="idBodega" Type="bigint" />
+  </EntityType>
+  <EntityType Name="municipio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="idDepartamento" Type="bigint" />
+  </EntityType>
+  <EntityType Name="oficina">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="codigo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="telefono" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="latitud" Type="nvarchar" MaxLength="20" />
+    <Property Name="longitud" Type="nvarchar" MaxLength="20" />
+    <Property Name="idMunicipio" Type="bigint" Nullable="false" />
+    <Property Name="direccion" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="paquete">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="peso" Type="float" Nullable="false" />
+    <Property Name="altura" Type="float" Nullable="false" />
+    <Property Name="profundidad" Type="float" Nullable="false" />
+    <Property Name="ancho" Type="float" Nullable="false" />
+    <Property Name="idOficina" Type="bigint" />
+  </EntityType>
+  <EntityType Name="persona">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="primerNombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="otrosNombres" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="primerApellido" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="segundoApellido" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="documento" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="correo" Type="nvarchar" MaxLength="100" />
+    <Property Name="idTipoDocumento" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tipoDocumento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tipoTransporte">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="vehiculo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="placa" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idTipoTransporte" Type="bigint" />
+  </EntityType>
+  <Association Name="FK__direccion__idMun__3C69FB99">
+    <End Role="municipio" Type="Self.municipio" Multiplicity="1" />
+    <End Role="direccion" Type="Self.direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="municipio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="direccion">
+        <PropertyRef Name="idMunicipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__envio__idDirecci__5535A963">
+    <End Role="direccion" Type="Self.direccion" Multiplicity="0..1" />
+    <End Role="envio" Type="Self.envio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="direccion">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="envio">
+        <PropertyRef Name="idDireccionDestino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__envio__idEstado__571DF1D5">
+    <End Role="estadoEnvio" Type="Self.estadoEnvio" Multiplicity="0..1" />
+    <End Role="envio" Type="Self.envio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadoEnvio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="envio">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__envio__idPaquete__5629CD9C">
+    <End Role="paquete" Type="Self.paquete" Multiplicity="0..1" />
+    <End Role="envio" Type="Self.envio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paquete">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="envio">
+        <PropertyRef Name="idPaquete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__envio__idRemiten__5441852A">
+    <End Role="persona" Type="Self.persona" Multiplicity="0..1" />
+    <End Role="envio" Type="Self.envio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="envio">
+        <PropertyRef Name="idRemitente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__envio__idTipoTra__5812160E">
+    <End Role="tipoTransporte" Type="Self.tipoTransporte" Multiplicity="0..1" />
+    <End Role="envio" Type="Self.envio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoTransporte">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="envio">
+        <PropertyRef Name="idTipoTransporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__idBod__4CA06362">
+    <End Role="bodega" Type="Self.bodega" Multiplicity="0..1" />
+    <End Role="historial" Type="Self.historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bodega">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="historial">
+        <PropertyRef Name="idBodega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__historial__idPaq__4BAC3F29">
+    <End Role="paquete" Type="Self.paquete" Multiplicity="0..1" />
+    <End Role="historial" Type="Self.historial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="paquete">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="historial">
+        <PropertyRef Name="idPaquete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__municipio__idDep__398D8EEE">
+    <End Role="departamento" Type="Self.departamento" Multiplicity="0..1" />
+    <End Role="municipio" Type="Self.municipio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departamento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="municipio">
+        <PropertyRef Name="idDepartamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__oficina__idMunic__412EB0B6">
+    <End Role="municipio" Type="Self.municipio" Multiplicity="1" />
+    <End Role="oficina" Type="Self.oficina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="municipio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="oficina">
+        <PropertyRef Name="idMunicipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__paquete__idOfici__48CFD27E">
+    <End Role="oficina" Type="Self.oficina" Multiplicity="0..1" />
+    <End Role="paquete" Type="Self.paquete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="oficina">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="paquete">
+        <PropertyRef Name="idOficina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__vehiculo__idTipo__45F365D3">
+    <End Role="tipoTransporte" Type="Self.tipoTransporte" Multiplicity="0..1" />
+    <End Role="vehiculo" Type="Self.vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoTransporte">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vehiculo">
+        <PropertyRef Name="idTipoTransporte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tipo_doc_persona_id">
+    <End Role="tipoDocumento" Type="Self.tipoDocumento" Multiplicity="1" />
+    <End Role="persona" Type="Self.persona" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoDocumento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="persona">
+        <PropertyRef Name="idTipoDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Id_MunicipioBodega_FK">
+    <End Role="municipio" Type="Self.municipio" Multiplicity="1" />
+    <End Role="bodega" Type="Self.bodega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="municipio">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="bodega">
+        <PropertyRef Name="idMunicipio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Id_PersonaDireccion_FK">
+    <End Role="persona" Type="Self.persona" Multiplicity="1" />
+    <End Role="direccion" Type="Self.direccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="persona">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="direccion">
+        <PropertyRef Name="idPersona" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MensajeriaBDModelStoreContainer">
+    <EntitySet Name="bodega" EntityType="Self.bodega" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="departamento" EntityType="Self.departamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="direccion" EntityType="Self.direccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="envio" EntityType="Self.envio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadoEnvio" EntityType="Self.estadoEnvio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="historial" EntityType="Self.historial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="municipio" EntityType="Self.municipio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="oficina" EntityType="Self.oficina" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="paquete" EntityType="Self.paquete" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipoDocumento" EntityType="Self.tipoDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipoTransporte" EntityType="Self.tipoTransporte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vehiculo" EntityType="Self.vehiculo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__direccion__idMun__3C69FB99" Association="Self.FK__direccion__idMun__3C69FB99">
+      <End Role="municipio" EntitySet="municipio" />
+      <End Role="direccion" EntitySet="direccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK__envio__idDirecci__5535A963" Association="Self.FK__envio__idDirecci__5535A963">
+      <End Role="direccion" EntitySet="direccion" />
+      <End Role="envio" EntitySet="envio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__envio__idEstado__571DF1D5" Association="Self.FK__envio__idEstado__571DF1D5">
+      <End Role="estadoEnvio" EntitySet="estadoEnvio" />
+      <End Role="envio" EntitySet="envio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__envio__idPaquete__5629CD9C" Association="Self.FK__envio__idPaquete__5629CD9C">
+      <End Role="paquete" EntitySet="paquete" />
+      <End Role="envio" EntitySet="envio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__envio__idRemiten__5441852A" Association="Self.FK__envio__idRemiten__5441852A">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="envio" EntitySet="envio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__envio__idTipoTra__5812160E" Association="Self.FK__envio__idTipoTra__5812160E">
+      <End Role="tipoTransporte" EntitySet="tipoTransporte" />
+      <End Role="envio" EntitySet="envio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__idBod__4CA06362" Association="Self.FK__historial__idBod__4CA06362">
+      <End Role="bodega" EntitySet="bodega" />
+      <End Role="historial" EntitySet="historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK__historial__idPaq__4BAC3F29" Association="Self.FK__historial__idPaq__4BAC3F29">
+      <End Role="paquete" EntitySet="paquete" />
+      <End Role="historial" EntitySet="historial" />
+    </AssociationSet>
+    <AssociationSet Name="FK__municipio__idDep__398D8EEE" Association="Self.FK__municipio__idDep__398D8EEE">
+      <End Role="departamento" EntitySet="departamento" />
+      <End Role="municipio" EntitySet="municipio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__oficina__idMunic__412EB0B6" Association="Self.FK__oficina__idMunic__412EB0B6">
+      <End Role="municipio" EntitySet="municipio" />
+      <End Role="oficina" EntitySet="oficina" />
+    </AssociationSet>
+    <AssociationSet Name="FK__paquete__idOfici__48CFD27E" Association="Self.FK__paquete__idOfici__48CFD27E">
+      <End Role="oficina" EntitySet="oficina" />
+      <End Role="paquete" EntitySet="paquete" />
+    </AssociationSet>
+    <AssociationSet Name="FK__vehiculo__idTipo__45F365D3" Association="Self.FK__vehiculo__idTipo__45F365D3">
+      <End Role="tipoTransporte" EntitySet="tipoTransporte" />
+      <End Role="vehiculo" EntitySet="vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tipo_doc_persona_id" Association="Self.fk_tipo_doc_persona_id">
+      <End Role="tipoDocumento" EntitySet="tipoDocumento" />
+      <End Role="persona" EntitySet="persona" />
+    </AssociationSet>
+    <AssociationSet Name="Id_MunicipioBodega_FK" Association="Self.Id_MunicipioBodega_FK">
+      <End Role="municipio" EntitySet="municipio" />
+      <End Role="bodega" EntitySet="bodega" />
+    </AssociationSet>
+    <AssociationSet Name="Id_PersonaDireccion_FK" Association="Self.Id_PersonaDireccion_FK">
+      <End Role="persona" EntitySet="persona" />
+      <End Role="direccion" EntitySet="direccion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
