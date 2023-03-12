@@ -1,0 +1,20 @@
+{
+  "SerializedFilePath": "c:\\Users\\juand\\source\\repos\\Mensajeria\\Mensajeria.UI.Tests\\obj\\Debug\\project.razor.json",
+  "FilePath": "c:\\Users\\juand\\source\\repos\\Mensajeria\\Mensajeria.UI.Tests\\Mensajeria.UI.Tests.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.3"
+}
