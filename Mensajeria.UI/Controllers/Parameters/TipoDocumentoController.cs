@@ -6,10 +6,13 @@ using System.Web.Mvc;
 
 namespace Mensajeria.UI.Controllers.Parameters
 {
+    [Authorize]
     public class TipoDocumentoController : Controller
     {
         private MensajeriaBDEntities db = new MensajeriaBDEntities();
 
+
+        [AllowAnonymous]
         // GET: TipoDocumento
         public ActionResult Index()
         {

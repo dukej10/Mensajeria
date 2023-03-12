@@ -10,10 +10,13 @@ using Mensajeria.UI.BD;
 
 namespace Mensajeria.UI.Controllers.Core
 {
+    [Authorize]
     public class VehiculoController : Controller
     {
         private MensajeriaBDEntities db = new MensajeriaBDEntities();
 
+
+        [AllowAnonymous]
         // GET: Vehiculo
         public ActionResult Index()
         {

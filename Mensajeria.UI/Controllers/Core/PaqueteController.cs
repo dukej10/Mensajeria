@@ -10,10 +10,13 @@ using Mensajeria.UI.BD;
 
 namespace Mensajeria.UI.Controllers.Core
 {
+    [Authorize]
     public class PaqueteController : Controller
     {
         private MensajeriaBDEntities db = new MensajeriaBDEntities();
 
+
+        [AllowAnonymous]
         // GET: Paquete
         public ActionResult Index()
         {

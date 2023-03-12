@@ -10,10 +10,13 @@ using Mensajeria.UI.BD;
 
 namespace Mensajeria.UI.Controllers.Parameters
 {
+    [Authorize]
     public class TipoTransporteController : Controller
     {
         private MensajeriaBDEntities db = new MensajeriaBDEntities();
 
+
+        [AllowAnonymous]
         // GET: TipoTransporte
         public ActionResult Index()
         {

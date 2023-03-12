@@ -10,10 +10,13 @@ using Mensajeria.UI.BD;
 
 namespace Mensajeria.UI.Controllers.Core
 {
+    [Authorize]
     public class OficinaController : Controller
     {
         private MensajeriaBDEntities db = new MensajeriaBDEntities();
 
+
+        [AllowAnonymous]
         // GET: Oficina
         public ActionResult Index()
         {
@@ -21,6 +24,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(oficina.ToList());
         }
 
+        
         // GET: Oficina/Details/5
         public ActionResult Details(long? id)
         {
@@ -36,6 +40,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(oficina);
         }
 
+        
         // GET: Oficina/Create
         public ActionResult Create()
         {
@@ -61,6 +66,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(oficina);
         }
 
+        
         // GET: Oficina/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -77,6 +83,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(oficina);
         }
 
+        
         // POST: Oficina/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -94,6 +101,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(oficina);
         }
 
+        
         // GET: Oficina/Delete/5
         public ActionResult Delete(long? id)
         {
@@ -109,6 +117,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(oficina);
         }
 
+        
         // POST: Oficina/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

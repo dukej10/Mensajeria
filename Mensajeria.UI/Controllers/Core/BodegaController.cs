@@ -10,10 +10,13 @@ using Mensajeria.UI.BD;
 
 namespace Mensajeria.UI.Controllers.Core
 {
+    [Authorize]
     public class BodegaController : Controller
     {
         private MensajeriaBDEntities db = new MensajeriaBDEntities();
 
+
+        [AllowAnonymous]
         // GET: Bodega
         public ActionResult Index()
         {
@@ -21,6 +24,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(bodega.ToList());
         }
 
+        
         // GET: Bodega/Details/5
         public ActionResult Details(long? id)
         {
@@ -36,6 +40,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(bodega);
         }
 
+        
         // GET: Bodega/Create
         public ActionResult Create()
         {
@@ -43,6 +48,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View();
         }
 
+        
         // POST: Bodega/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -61,6 +67,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(bodega);
         }
 
+        
         // GET: Bodega/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -77,6 +84,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(bodega);
         }
 
+        
         // POST: Bodega/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -94,6 +102,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(bodega);
         }
 
+        
         // GET: Bodega/Delete/5
         public ActionResult Delete(long? id)
         {

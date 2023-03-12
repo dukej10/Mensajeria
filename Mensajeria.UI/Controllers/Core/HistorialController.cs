@@ -10,10 +10,13 @@ using Mensajeria.UI.BD;
 
 namespace Mensajeria.UI.Controllers.Core
 {
+    [Authorize]
     public class HistorialController : Controller
     {
         private MensajeriaBDEntities db = new MensajeriaBDEntities();
 
+
+        [AllowAnonymous]
         // GET: Historial
         public ActionResult Index()
         {
@@ -21,6 +24,7 @@ namespace Mensajeria.UI.Controllers.Core
             return View(historial.ToList());
         }
 
+        
         // GET: Historial/Details/5
         public ActionResult Details(long? id)
         {

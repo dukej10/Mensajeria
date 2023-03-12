@@ -10,15 +10,20 @@ using Mensajeria.UI.BD;
 
 namespace Mensajeria.UI.Controllers.Parameters
 {
+    [Authorize]
     public class PersonaController : Controller
     {
         private MensajeriaBDEntities db = new MensajeriaBDEntities();
 
+        [AllowAnonymous]
         // GET: Persona
         public ActionResult Index()
         {
             var persona = db.persona.Include(p => p.tipoDocumento);
             return View(persona.ToList());
+            //return View(persona.Where(p => p.primerNombre.Contains("A")));
+
+
         }
 
         // GET: Persona/Details/5
