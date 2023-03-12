@@ -1,0 +1,16 @@
+﻿
+<footer>
+    <div class="col-md-3">
+        <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+    </div>
+
+    @using Microsoft.AspNet.Identity
+    @if (Request.IsAuthenticated)
+    {<div class="col-md-4">
+            <p><a href="https://asp.net" class="btn btn-primary btn-lg">Ver Oferta &raquo;</a></p>
+        </div>
+    }
+
+
+
+</footer>
